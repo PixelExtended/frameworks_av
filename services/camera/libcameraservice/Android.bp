@@ -41,7 +41,8 @@ cc_library_shared {
         "needs_camera_boottime_defaults",
         "needs_oplus_vendor_tag",
         "camera_needs_client_info_lib_defaults",
-	"camera_needs_client_info_lib_oplus_defaults",
+        "camera_needs_client_info_lib_oplus_defaults",
+        "uses_oppo_camera_defaults",
     ],
 
     // Camera service source
