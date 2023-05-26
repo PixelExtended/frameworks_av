@@ -3581,6 +3581,15 @@ status_t CameraService::BasicClient::startCameraOps() {
         ALOGI("Disabling miui camera mode");
     }
 
+    // Configure rui camera mode
+    if (strcmp(String8(mClientPackageName).string(), "com.oppo.camera") == 0) {
+        SetProperty("oppo.camera.packname", "com.oppo.camera");
+        ALOGI("Enabling rui camera mode");
+    } else {
+        SetProperty("oppo.camera.packname", "");
+        ALOGI("Disabling rui camera mode");
+    }
+
     // Transition device availability listeners from PRESENT -> NOT_AVAILABLE
     sCameraService->updateStatus(StatusInternal::NOT_AVAILABLE, mCameraIdStr);
 
